@@ -14,6 +14,7 @@ struct ContentView: View {
     @State var answerDef: String = ""
     @State var entriesArray: [String] = []
     @State var hideDebug: Bool = false
+    @State var hardMode: Bool = false
     
     var body: some View {
         Group { // The grid
@@ -59,13 +60,15 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                     
                     VStack(spacing: UIScreen.main.bounds.height / 25 ) {// row collection
+                        #if targetEnvironment(macCatalyst)
+                        let spacing = UIScreen.main.bounds.width / 20
+                        #elseif os(tvOS)
+                        let spacing = UIScreen.main.bounds.width / 20
+                        #else
+                        let spacing = UIScreen.main.bounds.width / 8
+                        #endif
                         ForEach((0...5), id: \.self) {
                             if $0 > entriesArray.count - 1 {
-                                #if targetEnvironment(macCatalyst)
-                                let spacing = UIScreen.main.bounds.width / 20
-                                #else
-                                let spacing = UIScreen.main.bounds.width / 8
-                                #endif
                                 HStack(spacing: spacing) {
                                     Text(" ")
                                         .foregroundColor(.white)
@@ -120,11 +123,6 @@ struct ContentView: View {
                                 }
                             } else {
                                 let word = entriesArray[$0].uppercased()
-                                #if targetEnvironment(macCatalyst)
-                                let spacing = UIScreen.main.bounds.width / 20
-                                #else
-                                let spacing = UIScreen.main.bounds.width / 8
-                                #endif
                                 HStack(spacing: spacing) {
                                      if answer[0] == word[0] {
                                         Text(word[0])
@@ -132,7 +130,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.green)
+                                                    .foregroundColor(Color("Green"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -142,7 +140,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.orange)
+                                                    .foregroundColor(Color("Yellow"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -152,7 +150,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(Color("Grey"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -164,7 +162,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.green)
+                                                    .foregroundColor(Color("Green"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -174,7 +172,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.orange)
+                                                    .foregroundColor(Color("Yellow"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -184,7 +182,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(Color("Grey"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -196,7 +194,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.green)
+                                                    .foregroundColor(Color("Green"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -206,7 +204,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.orange)
+                                                    .foregroundColor(Color("Yellow"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -216,7 +214,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(Color("Grey"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -228,7 +226,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.green)
+                                                    .foregroundColor(Color("Green"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -238,7 +236,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.orange)
+                                                    .foregroundColor(Color("Yellow"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -248,7 +246,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(Color("Grey"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -260,7 +258,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.green)
+                                                    .foregroundColor(Color("Green"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -270,7 +268,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.orange)
+                                                    .foregroundColor(Color("Yellow"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -280,7 +278,7 @@ struct ContentView: View {
                                             .font(.system(size: 24, weight: .regular, design: .monospaced))
                                             .background {
                                                 Rectangle()
-                                                    .foregroundColor(.gray)
+                                                    .foregroundColor(Color("Grey"))
                                                     .scaledToFill()
                                                     .cornerRadius(10)
                                             }
@@ -293,8 +291,8 @@ struct ContentView: View {
                         .background {
                             Rectangle()
                                 .cornerRadius(10)
-                                .foregroundColor(.blue)
-                                .opacity(0.5)
+                                .foregroundColor(.white)
+                                .opacity(0.2)
                         }
                 }
                 if gameStatus == 0 {
@@ -305,29 +303,45 @@ struct ContentView: View {
                     #endif
                     TextField("Have a guess!", text: $txtField)
                         .padding(.horizontal, spacing)
+                        #if !os(tvOS)
                         .textFieldStyle(.roundedBorder)
+                        #endif
                         .onSubmit {
-                            if txtField.count != 5 {
+                            if txtField.count < 5 || String(txtField.prefix(5)).contains(" ") {
                                 txtField = ""
+                                #if !os(tvOS)
                                 let generator = UIImpactFeedbackGenerator(style: .heavy)
                                 generator.impactOccurred(intensity: 5)
+                                #endif
                             } else {
                                 var words: String!
                                 if let path = Bundle.main.path(forResource: "check", ofType: "json") {
                                     guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {return}
                                     words = String(decoding: data, as: UTF8.self)
                                 }
+                                
                                 if words.contains("\"\(txtField)\"") {entriesArray.append(String(txtField.prefix(5)))}
+                                else if hardMode == false {entriesArray.append(String(txtField.prefix(5)))}
                                 txtField = ""
+                                #if !os(tvOS)
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.prepare()
-                                generator.notificationOccurred(.warning)
-                                
+                                #endif
                                 // game status check
                                 if entriesArray.last?.uppercased() == answer {
+#if !os(tvOS)
+                                    generator.notificationOccurred(.success)
+#endif
                                     gameStatus = 1
                                 } else if entriesArray.count == 6 {
+#if !os(tvOS)
+                                    generator.notificationOccurred(.error)
+#endif
                                     gameStatus = -1
+                                } else {
+#if !os(tvOS)
+                                    generator.notificationOccurred(.warning)
+#endif
                                 }
                             }
                         }
@@ -337,6 +351,17 @@ struct ContentView: View {
                             hideDebug.toggle()
                         }}
                     #endif
+                    Toggle(isOn: $hardMode) {
+                        Text("Hard Mode")
+                    }
+                    .padding()
+                    .background {
+                        Rectangle()
+                            .cornerRadius(10)
+                            .foregroundColor(Color("Grey"))
+                            .padding(.horizontal, 5)
+                            .opacity(0.2)
+                    }
                 }
             }
         }
