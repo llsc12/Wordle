@@ -13,6 +13,7 @@ struct ContentView: View {
     @State var answer: String = ""
     @State var answerDef: String = ""
     @State var entriesArray: [String] = []
+    @State var hideDebug: Bool = false
     
     var body: some View {
         Group { // The grid
@@ -58,7 +59,7 @@ struct ContentView: View {
                         .foregroundColor(.gray)
                     
                     VStack(spacing: UIScreen.main.bounds.height / 25 ) {// row collection
-                        ForEach((0...4), id: \.self) {
+                        ForEach((0...5), id: \.self) {
                             if $0 > entriesArray.count - 1 {
                                 #if targetEnvironment(macCatalyst)
                                 let spacing = UIScreen.main.bounds.width / 20
@@ -119,7 +120,12 @@ struct ContentView: View {
                                 }
                             } else {
                                 let word = entriesArray[$0].uppercased()
-                                HStack(spacing: UIScreen.main.bounds.width / 8) {
+                                #if targetEnvironment(macCatalyst)
+                                let spacing = UIScreen.main.bounds.width / 20
+                                #else
+                                let spacing = UIScreen.main.bounds.width / 8
+                                #endif
+                                HStack(spacing: spacing) {
                                      if answer[0] == word[0] {
                                         Text(word[0])
                                             .foregroundColor(.white)
@@ -292,8 +298,13 @@ struct ContentView: View {
                         }
                 }
                 if gameStatus == 0 {
+                    #if targetEnvironment(macCatalyst)
+                    let spacing = UIScreen.main.bounds.width / 20
+                    #else
+                    let spacing = UIScreen.main.bounds.width / 10
+                    #endif
                     TextField("Have a guess!", text: $txtField)
-                        .padding()
+                        .padding(.horizontal, spacing)
                         .textFieldStyle(.roundedBorder)
                         .onSubmit {
                             if txtField.count != 5 {
@@ -301,7 +312,12 @@ struct ContentView: View {
                                 let generator = UIImpactFeedbackGenerator(style: .heavy)
                                 generator.impactOccurred(intensity: 5)
                             } else {
-                                entriesArray.append(txtField)
+                                var words: String!
+                                if let path = Bundle.main.path(forResource: "check", ofType: "json") {
+                                    guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {return}
+                                    words = String(decoding: data, as: UTF8.self)
+                                }
+                                if words.contains("\"\(txtField)\"") {entriesArray.append(String(txtField.prefix(5)))}
                                 txtField = ""
                                 let generator = UINotificationFeedbackGenerator()
                                 generator.prepare()
@@ -310,13 +326,16 @@ struct ContentView: View {
                                 // game status check
                                 if entriesArray.last?.uppercased() == answer {
                                     gameStatus = 1
-                                } else if entriesArray.count == 5 {
+                                } else if entriesArray.count == 6 {
                                     gameStatus = -1
                                 }
                             }
                         }
                     #if DEBUG
-                    Text("debugging only: \(answer)")
+                    if !hideDebug {Text("debugging only: \(answer)")
+                        .onLongPressGesture {
+                            hideDebug.toggle()
+                        }}
                     #endif
                 }
             }
