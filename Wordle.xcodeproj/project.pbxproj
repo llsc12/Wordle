@@ -11,12 +11,11 @@
 		AA6A74EE27F662C900311137 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A74DD27F662C700311137 /* ContentView.swift */; };
 		AA6A74F027F662C900311137 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6A74DE27F662C900311137 /* Assets.xcassets */; };
 		AA8C0FB527F76165005DEAE0 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = AA8C0FB327F76164005DEAE0 /* words.json */; };
-		AAA5D27727F87C7700A465FE /* Wordle_TVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA5D27627F87C7700A465FE /* Wordle_TVApp.swift */; };
-		AAA5D27E27F87C7B00A465FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA5D27D27F87C7B00A465FE /* Preview Assets.xcassets */; };
-		AAA5D28227F87C9A00A465FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A74DD27F662C700311137 /* ContentView.swift */; };
-		AAA5D28327F87CAD00A465FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6A74DE27F662C900311137 /* Assets.xcassets */; };
-		AAA5D28427F87E5E00A465FE /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = AACC9D1027F7B6AC00941B41 /* check.json */; };
-		AAA5D28527F87E5E00A465FE /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = AA8C0FB327F76164005DEAE0 /* words.json */; };
+		AAA5D29827F8989900A465FE /* wordleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A74DC27F662C700311137 /* wordleApp.swift */; };
+		AAA5D29927F8989D00A465FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6A74DD27F662C700311137 /* ContentView.swift */; };
+		AAA5D29C27F898A700A465FE /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = AACC9D1027F7B6AC00941B41 /* check.json */; };
+		AAA5D29D27F898AD00A465FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA6A74DE27F662C900311137 /* Assets.xcassets */; };
+		AAA5D29F27F898E500A465FE /* TV.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAA5D29E27F898E500A465FE /* TV.xcassets */; };
 		AACC9D1127F7B6AC00941B41 /* check.json in Resources */ = {isa = PBXBuildFile; fileRef = AACC9D1027F7B6AC00941B41 /* check.json */; };
 /* End PBXBuildFile section */
 
@@ -28,9 +27,9 @@
 		AA8C0FB027F7479E005DEAE0 /* Wordle (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wordle (iOS).entitlements"; sourceTree = "<group>"; };
 		AA8C0FB127F747B1005DEAE0 /* Wordle--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Wordle--iOS--Info.plist"; sourceTree = "<group>"; };
 		AA8C0FB327F76164005DEAE0 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
-		AAA5D27427F87C7700A465FE /* Wordle TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wordle TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAA5D27627F87C7700A465FE /* Wordle_TVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wordle_TVApp.swift; sourceTree = "<group>"; };
-		AAA5D27D27F87C7B00A465FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AAA5D28A27F8983300A465FE /* Wordle TV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wordle TV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA5D29E27F898E500A465FE /* TV.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TV.xcassets; sourceTree = "<group>"; };
+		AAA5D2A027F898F400A465FE /* Wordle-TV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Wordle-TV-Info.plist"; sourceTree = "<group>"; };
 		AACC9D1027F7B6AC00941B41 /* check.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = check.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,7 +41,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAA5D27127F87C7700A465FE /* Frameworks */ = {
+		AAA5D28727F8983300A465FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -55,10 +54,10 @@
 		AA6A74D627F662C700311137 = {
 			isa = PBXGroup;
 			children = (
+				AAA5D2A027F898F400A465FE /* Wordle-TV-Info.plist */,
 				AA8C0FB127F747B1005DEAE0 /* Wordle--iOS--Info.plist */,
 				AA8C0FB027F7479E005DEAE0 /* Wordle (iOS).entitlements */,
 				AA6A74DB27F662C700311137 /* Shared */,
-				AAA5D27527F87C7700A465FE /* Wordle TV */,
 				AA6A74E427F662C900311137 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +69,7 @@
 				AA6A74DC27F662C700311137 /* wordleApp.swift */,
 				AA6A74DD27F662C700311137 /* ContentView.swift */,
 				AA6A74DE27F662C900311137 /* Assets.xcassets */,
+				AAA5D29E27F898E500A465FE /* TV.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -78,7 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				AA6A74E327F662C900311137 /* Wordle.app */,
-				AAA5D27427F87C7700A465FE /* Wordle TV.app */,
+				AAA5D28A27F8983300A465FE /* Wordle TV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,23 +90,6 @@
 				AA8C0FB327F76164005DEAE0 /* words.json */,
 			);
 			path = datasets;
-			sourceTree = "<group>";
-		};
-		AAA5D27527F87C7700A465FE /* Wordle TV */ = {
-			isa = PBXGroup;
-			children = (
-				AAA5D27627F87C7700A465FE /* Wordle_TVApp.swift */,
-				AAA5D27C27F87C7B00A465FE /* Preview Content */,
-			);
-			path = "Wordle TV";
-			sourceTree = "<group>";
-		};
-		AAA5D27C27F87C7B00A465FE /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				AAA5D27D27F87C7B00A465FE /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,13 +112,13 @@
 			productReference = AA6A74E327F662C900311137 /* Wordle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AAA5D27327F87C7700A465FE /* Wordle TV */ = {
+		AAA5D28927F8983300A465FE /* Wordle TV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AAA5D28127F87C7B00A465FE /* Build configuration list for PBXNativeTarget "Wordle TV" */;
+			buildConfigurationList = AAA5D29527F8983600A465FE /* Build configuration list for PBXNativeTarget "Wordle TV" */;
 			buildPhases = (
-				AAA5D27027F87C7700A465FE /* Sources */,
-				AAA5D27127F87C7700A465FE /* Frameworks */,
-				AAA5D27227F87C7700A465FE /* Resources */,
+				AAA5D28627F8983300A465FE /* Sources */,
+				AAA5D28727F8983300A465FE /* Frameworks */,
+				AAA5D28827F8983300A465FE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -143,7 +126,7 @@
 			);
 			name = "Wordle TV";
 			productName = "Wordle TV";
-			productReference = AAA5D27427F87C7700A465FE /* Wordle TV.app */;
+			productReference = AAA5D28A27F8983300A465FE /* Wordle TV.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +142,7 @@
 					AA6A74E227F662C900311137 = {
 						CreatedOnToolsVersion = 13.3;
 					};
-					AAA5D27327F87C7700A465FE = {
+					AAA5D28927F8983300A465FE = {
 						CreatedOnToolsVersion = 13.3;
 					};
 				};
@@ -178,7 +161,7 @@
 			projectRoot = "";
 			targets = (
 				AA6A74E227F662C900311137 /* Wordle */,
-				AAA5D27327F87C7700A465FE /* Wordle TV */,
+				AAA5D28927F8983300A465FE /* Wordle TV */,
 			);
 		};
 /* End PBXProject section */
@@ -194,14 +177,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAA5D27227F87C7700A465FE /* Resources */ = {
+		AAA5D28827F8983300A465FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA5D28427F87E5E00A465FE /* check.json in Resources */,
-				AAA5D28527F87E5E00A465FE /* words.json in Resources */,
-				AAA5D28327F87CAD00A465FE /* Assets.xcassets in Resources */,
-				AAA5D27E27F87C7B00A465FE /* Preview Assets.xcassets in Resources */,
+				AAA5D29F27F898E500A465FE /* TV.xcassets in Resources */,
+				AAA5D29D27F898AD00A465FE /* Assets.xcassets in Resources */,
+				AAA5D29C27F898A700A465FE /* check.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,12 +199,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AAA5D27027F87C7700A465FE /* Sources */ = {
+		AAA5D28627F8983300A465FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAA5D28227F87C9A00A465FE /* ContentView.swift in Sources */,
-				AAA5D27727F87C7700A465FE /* Wordle_TVApp.swift in Sources */,
+				AAA5D29927F8989D00A465FE /* ContentView.swift in Sources */,
+				AAA5D29827F8989900A465FE /* wordleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,17 +391,18 @@
 			};
 			name = Release;
 		};
-		AAA5D27F27F87C7B00A465FE /* Debug */ = {
+		AAA5D29627F8983600A465FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Wordle TV/Preview Content\"";
 				DEVELOPMENT_TEAM = 9Q5DU84SYV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Wordle-TV-Info.plist";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -437,17 +420,18 @@
 			};
 			name = Debug;
 		};
-		AAA5D28027F87C7B00A465FE /* Release */ = {
+		AAA5D29727F8983600A465FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Brand Assets";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Wordle TV/Preview Content\"";
 				DEVELOPMENT_TEAM = 9Q5DU84SYV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Wordle-TV-Info.plist";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -487,11 +471,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AAA5D28127F87C7B00A465FE /* Build configuration list for PBXNativeTarget "Wordle TV" */ = {
+		AAA5D29527F8983600A465FE /* Build configuration list for PBXNativeTarget "Wordle TV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AAA5D27F27F87C7B00A465FE /* Debug */,
-				AAA5D28027F87C7B00A465FE /* Release */,
+				AAA5D29627F8983600A465FE /* Debug */,
+				AAA5D29727F8983600A465FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
