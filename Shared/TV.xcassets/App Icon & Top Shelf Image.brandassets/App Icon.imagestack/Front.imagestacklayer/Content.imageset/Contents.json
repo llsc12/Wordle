@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "WordleBigSur.png",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
+      "filename" : "WordleBigSur-1.png",
       "idiom" : "tv",
       "scale" : "2x"
     }

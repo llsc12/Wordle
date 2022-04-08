@@ -21,6 +21,7 @@ struct ContentView: View {
             VStack {
                 if gameStatus != 0 {
                     if gameStatus == 1 || gameStatus == -1 {
+                        Spacer(minLength: 30)
                         Text(gameStatus == 1 ? "You win!" : "You lost!")
                             .tracking(2)
                             .font(.title)
@@ -345,15 +346,22 @@ struct ContentView: View {
                                 }
                             }
                         }
+                    
+                    
+                    
                     #if DEBUG
                     if !hideDebug {Text("debugging only: \(answer)")
                         .onLongPressGesture {
                             hideDebug.toggle()
                         }}
                     #endif
+                    
+                    
+                    
                     Toggle(isOn: $hardMode) {
                         Text("Hard Mode")
                     }
+                    .frame(minWidth: 100, idealWidth: 200, maxWidth: 400)
                     .padding()
                     .background {
                         Rectangle()
@@ -361,6 +369,9 @@ struct ContentView: View {
                             .foregroundColor(Color("Grey"))
                             .padding(.horizontal, 5)
                             .opacity(0.2)
+                            .onLongPressGesture {
+                                entriesArray.removeLast()
+                            }
                     }
                 }
             }

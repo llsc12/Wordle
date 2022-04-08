@@ -1,18 +1,22 @@
 {
   "images" : [
     {
+      "filename" : "WordleBigSur.png",
       "idiom" : "tv",
       "scale" : "1x"
     },
     {
+      "filename" : "WordleBigSur-1.png",
       "idiom" : "tv",
       "scale" : "2x"
     },
     {
+      "filename" : "WordleBigSur-2.png",
       "idiom" : "tv-marketing",
       "scale" : "1x"
     },
     {
+      "filename" : "WordleBigSur-3.png",
       "idiom" : "tv-marketing",
       "scale" : "2x"
     }
